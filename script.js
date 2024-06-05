@@ -2,12 +2,15 @@ const resultInput = document.getElementById('result');
 let currentExpression = '';
 
 function appendNumber(number) {
+    if (!currentExpression.charAt(currentExpression.length - 1).match(/[0-9]/)) {
+        currentExpression += ' ';
+    }
     currentExpression += number;
     resultInput.value = currentExpression;
 }
 
 function appendOperator(operator) {
-    currentExpression += operator;
+    currentExpression += ' ' + operator;
     resultInput.value = currentExpression;
 }
 
